@@ -7,7 +7,7 @@ library(stringr)
 library(seqinr)
 
 #--------------------- Inputs & parameters --------------------------------------
-setwd("D:\\backup\\5-CNV Evolution\\encoding")
+setwd("set path to bed file")
 bed_path    <- "cnv_simulated.bed"  # <-- put your path here
 region_size <- 50                   # segment/bin size (bp)
 individuals_per_pop <- 10
@@ -155,6 +155,7 @@ for (pop_id in seq_len(pop_number)) {
     write.fasta(seq2fasta, paste0("pop_", pop_id), file.out = paste0("codon_encoded.fasta"), open = "a", nbchar = 60, as.string = FALSE)
   }
 }
+
 
 
 
