@@ -1,1 +1,22 @@
+Example Workflow with cnv_simulated.bed
 
+cnv_simulated.bed is a synthetic dataset containing copy number variation (CNV) segments across 4 populations, each with 10 individuals.
+
+STEP 1 — Encode CNVs into codons
+Run the Bed2Fasta.R script in R to convert copy number states into codons.
+Input: cnv_simulated.bed
+Output: codon_encoded.fasta
+
+STEP 2 — Run evolutionary inference
+Use the PoMoCNV.bf script in the HyPhy package to estimate copy number mutation rate and fitness loss per copy deletion.
+
+Input: codon_encoded.fasta and phylogenetic tree.
+Output: HyPhy_output.txt
+
+Tree specification
+The example dataset assumes 4 populations with the phylogenetic tree:
+
+myTree = ((pop_1:1.0,pop_3:1.0)a1:1.0,(pop_2:1.0,pop_4:1.0)a2:1.0);
+
+
+This tree is specified in PoMoCNV.bf. Replace it with a tree matching your population number and their evolutionary relationships.
